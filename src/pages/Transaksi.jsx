@@ -26,7 +26,7 @@ export const HalamanTransaksi = () => {
   return (
     <Box sx={{ display: "flex", bgcolor: "", width: "100%" }}>
       {/* Main Content */}
-      <Box sx={{ width: "100%", ml: "100px" }}>
+      <Box sx={{ width: "100%", ml: "10px" }}>
 
         {/* Main Content Area */}
         <Box sx={{ bgcolor: "#f6f6f6", p: 4 }}>

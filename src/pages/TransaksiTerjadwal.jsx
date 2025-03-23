@@ -13,13 +13,18 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import { MainContentSection } from "./sectionsTransaksiTerjadwal/MainContentSection";
 import { NavigationBarSection } from "./sectionsTransaksiTerjadwal/NavigationBarSection";
 import { PreferencesSection } from "./sectionsTransaksiTerjadwal/PrefencesSection";
 import { TransactionListSection } from "./sectionsTransaksiTerjadwal/TransactionListSection";
+import { PemasukanBaru } from "./PemasukanBaru/PemasukanBaru";
+import { PengeluaranBaru } from "./PengeluaranBaru/PengeluaranBaru";
 
 export const TransaksiTerjadwal = () => {
+  const [openModal, setOpenModal] = useState(false); // State untuk modal pemasukan
+  const [openPengeluaran, setOpenPengeluaran] = useState(false); // State untuk modal pengeluaran
+
   return (
     <Box sx={{ display: "flex", bgcolor: "background.default", width: "100%" }}>
         {/* Main Content */}
@@ -41,10 +46,10 @@ export const TransaksiTerjadwal = () => {
 
                 <Grid container spacing={2}>
                   <Grid item xs={12}>
-                    {/*<NavigationBarSection />*/}
+                    {/* <NavigationBarSection /> */}
                   </Grid>
                   <Grid item xs={12}>
-                    {/*<MainContentSection />*/}
+                    {/* <MainContentSection /> */}
                   </Grid>
                   <Grid item xs={12}>
                     <TransactionListSection />
@@ -98,34 +103,42 @@ export const TransaksiTerjadwal = () => {
             </Box>
           </Box>
     
-      {/* Action Buttons */}
+      {/* Tombol Hijau untuk Pemasukan */}
       <Fab
         color="primary"
         sx={{
           position: "fixed",
           bottom: 120,
+          bgcolor: "#51c41b",
           right: 30,
           width: 51,
           height: 48,
           borderRadius: "25.5px/24px",
         }}
+        onClick={() => setOpenModal(true)} // Buka modal pemasukan
       >
         <AddIcon />
       </Fab>
+      <PemasukanBaru open={openModal} onClose={() => setOpenModal(false)} />
 
+      {/* Tombol Merah untuk Pengeluaran */}
       <Fab
-        color="error"
+        color="secondary"
+        aria-label="add"
         sx={{
-          position: "fixed",
-          bottom: 50,
+          position: "absolute",
           right: 30,
+          bottom: 50,
+          bgcolor: "#ff3a3a",
           width: 51,
           height: 48,
           borderRadius: "25.5px/24px",
         }}
+        onClick={() => setOpenPengeluaran(true)} // Buka modal pengeluaran
       >
         <AddIcon />
       </Fab>
+      <PengeluaranBaru open={openPengeluaran} onClose={() => setOpenPengeluaran(false)} />
     </Box>
   );
 };

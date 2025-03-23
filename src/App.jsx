@@ -9,6 +9,8 @@ import HalamanTransaksi from "./pages/Transaksi";
 import { PengeluaranBaru } from "./pages/PengeluaranBaru/PengeluaranBaru";
 import { PemasukanBaru } from "./pages/PemasukanBaru/PemasukanBaru"; // Tambahkan impor untuk PemasukanBaru
 
+
+
 // Layout agar Sidebar selalu muncul
 const Layout = ({ children }) => (
   <div className="flex">
