@@ -35,7 +35,7 @@ export const UserProfileSection = () => {
     ];
 
     return (
-        <Box sx={{ width: 399, mt: 4 }}>
+        <Box sx={{ width: 220, height: 780 }}>
             <Card
                 sx={{
                     width: 230,
