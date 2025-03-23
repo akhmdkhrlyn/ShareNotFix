@@ -35,11 +35,11 @@ export const UserProfileSection = () => {
     ];
 
     return (
-        <Box sx={{ width: 226, mt: 4 }}>
+        <Box sx={{ width: 220, height: 780 }}>
             <Card
                 sx={{
-                    width: 212,
-                    borderRadius: 2,
+                    width: 230,
+                    borderRadius: 1,
                     boxShadow: "0px 0px 14px rgba(0, 0, 0, 0.06)",
                 }}
             >
