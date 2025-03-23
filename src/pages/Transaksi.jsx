@@ -34,13 +34,20 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import { TransactionFilterSection } from "./sectionsHalamanTransaksi/TransactionFilterSection";
 import { TransactionListSection } from "./sectionsHalamanTransaksi/TransactionListSection";
 import { TransactionOverviewSection } from "./sectionsHalamanTransaksi/TransactionOverViewSection";
 import { UserProfileSection } from "./sectionsHalamanTransaksi/UserProfileSection";
+import { useNavigate } from "react-router-dom";
+import { PemasukanBaru } from "./PemasukanBaru/PemasukanBaru";
+import { PengeluaranBaru } from "./PengeluaranBaru/PengeluaranBaru";
 
 export const HalamanTransaksi = () => {
+  const navigate = useNavigate(); // Tambahkan useNavigate
+  const [openModal, setOpenModal] = useState(false);
+  const [openPengeluaran, setOpenPengeluaran] = useState(false);
+
   return (
     <Box sx={{ display: "flex", bgcolor: "", width: "100%" }}>
       {/* Main Content */}
@@ -132,9 +139,13 @@ export const HalamanTransaksi = () => {
                   height: 48,
                   borderRadius: "25.5px/24px",
                 }}
+                onClick={() => setOpenModal(true)} // Buka modal saat tombol diklik
               >
                 <AddIcon />
               </Fab>
+
+              {/* Modal Pemasukan Baru */}
+              <PemasukanBaru open={openModal} onClose={() => setOpenModal(false)} />
 
               <Fab
                 color="secondary"
@@ -148,9 +159,12 @@ export const HalamanTransaksi = () => {
                   height: 48,
                   borderRadius: "25.5px/24px",
                 }}
+                onClick={() => setOpenPengeluaran(true)} // Buka modal pengeluaran
               >
                 <AddIcon />
               </Fab>
+
+              <PengeluaranBaru open={openPengeluaran} onClose={() => setOpenPengeluaran(false)} />
             </Grid>
           </Grid>
         </Box>

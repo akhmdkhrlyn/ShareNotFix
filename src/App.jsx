@@ -5,6 +5,9 @@ import Dashboard from "./pages/Dashboard";
 import KategoriPemasukan from "./pages/KategoriPemasukan";
 import TransaksiTerjadwal from "./pages/TransaksiTerjadwal";
 import TransaksiPage from "./pages/Transaksi"; // Tambahkan impor untuk TransaksiPage
+import HalamanTransaksi from "./pages/Transaksi";
+import { PengeluaranBaru } from "./pages/PengeluaranBaru/PengeluaranBaru";
+import { PemasukanBaru } from "./pages/PemasukanBaru/PemasukanBaru"; // Tambahkan impor untuk PemasukanBaru
 
 // Layout agar Sidebar selalu muncul
 const Layout = ({ children }) => (
@@ -27,6 +30,8 @@ function App() {
         <Route path="/pengelolaan-kategori" element={<Layout><KategoriPemasukan /></Layout>} />
         <Route path="/transaksi-terjadwal" element={<Layout><TransaksiTerjadwal /></Layout>} />
         <Route path="/transaksi" element={<Layout><TransaksiPage /></Layout>} /> {/* Tambahkan rute ini */}
+        <Route path="/pengeluaran-baru" element={<PengeluaranBaru />} />
+        <Route path="/pemasukan-baru" element={<PemasukanBaru />} /> {/* Tambahkan rute ini */}
       </Routes>
     </Router>
   );
