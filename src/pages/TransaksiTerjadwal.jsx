@@ -22,117 +22,110 @@ import { TransactionListSection } from "./sectionsTransaksiTerjadwal/Transaction
 export const TransaksiTerjadwal = () => {
   return (
     <Box sx={{ display: "flex", bgcolor: "background.default", width: "100%" }}>
-      <Box sx={{ width: "1440px", position: "relative" }}>
-        {/* Main Content Area */}
-        <Box sx={{ display: "flex", height: "calc(100vh - 89px)" }}>
-          {/* Main Content */}
-          <Box sx={{ flex: 1, display: "flex", flexDirection: "column" }}>
-            {/* Content Area */}
-            <Box sx={{ flex: 1, bgcolor: "#F6F6F6", p: 3, display: "flex" }}>
-              {/* Main Content Area */}
-              <Box sx={{ flex: 1 }}>
-                <Box sx={{ bgcolor: "background.default", p: 2, mb: 2 }}>
-                  <Typography
-                    variant="h4"
-                    sx={{
-                      fontFamily: "'DM Sans', Helvetica",
-                      fontWeight: 700,
-                      color: "#292929",
-                      mb: 0,
-                    }}>
-                    Terjadwal
-                  </Typography>
+        {/* Main Content */}
+          {/* Content Area */}
+          <Box sx={{ flex: 1, bgcolor: "#F6F6F6", p: 3, display: "flex" }}>
+            {/* Main Content Area */}
+            <Box sx={{ flex: 1 }}>
+              <Box sx={{ bgcolor: "background.default", p: 2, mb: 2 }}>
+                <Typography
+                  variant="h4"
+                  sx={{
+                    fontFamily: "'DM Sans', Helvetica",
+                    fontWeight: 700,
+                    color: "#292929",
+                    mb: 0,
+                  }}>
+                  Terjadwal
+                </Typography>
 
-                  <Grid container spacing={2}>
-                    <Grid item xs={12}>
-                      {/*<NavigationBarSection />*/}
-                    </Grid>
-                    <Grid item xs={12}>
-                      {/*<MainContentSection />*/}
-                    </Grid>
-                    <Grid item xs={12}>
-                      <TransactionListSection />
-                    </Grid>
+                <Grid container spacing={2}>
+                  <Grid item xs={12}>
+                    {/*<NavigationBarSection />*/}
                   </Grid>
-                </Box>
-
-                {/* Pagination */}
-                <Box
-                  sx={{ display: "flex", justifyContent: "flex-end", mt: 2 }}
-                >
-                  <Box sx={{ display: "flex", alignItems: "center" }}>
-                    <Typography
-                      sx={{
-                        fontFamily: "'Inter', Helvetica",
-                        fontWeight: 500,
-                        color: "#232638",
-                        fontSize: 12,
-                        mr: 2,
-                      }}
-                    >
-                      1-2 item
-                    </Typography>
-                    <Pagination
-                      count={2}
-                      renderItem={(item) => (
-                        <PaginationItem
-                          {...item}
-                          sx={{
-                            bgcolor:
-                              item.page === 1 ? "primary.main" : "transparent",
-                            color: item.page === 1 ? "white" : "#505470",
-                            border: "1px solid #EFF0F4",
-                            borderRadius: "3px",
-                            width: 26,
-                            height: 27,
-                            fontSize: 12,
-                            fontWeight: 500,
-                            fontFamily: "'Inter', Helvetica",
-                          }}
-                        />
-                      )}
-                    />
-                  </Box>
-                </Box>
+                  <Grid item xs={12}>
+                    {/*<MainContentSection />*/}
+                  </Grid>
+                  <Grid item xs={12}>
+                    <TransactionListSection />
+                  </Grid>
+                </Grid>
               </Box>
 
-              {/* Preferences Section */}
-              <Box sx={{ width: 200, ml: 1 }}>
-                <PreferencesSection />
+              {/* Pagination */}
+              <Box
+                sx={{ display: "flex", justifyContent: "flex-end", mt: 2 }}
+              >
+                <Box sx={{ display: "flex", alignItems: "center" }}>
+                  <Typography
+                    sx={{
+                      fontFamily: "'Inter', Helvetica",
+                      fontWeight: 500,
+                      color: "#232638",
+                      fontSize: 12,
+                      mr: 2,
+                    }}
+                  >
+                    1-2 item
+                  </Typography>
+                  <Pagination
+                    count={2}
+                    renderItem={(item) => (
+                      <PaginationItem
+                        {...item}
+                        sx={{
+                          bgcolor:
+                            item.page === 1 ? "primary.main" : "transparent",
+                          color: item.page === 1 ? "white" : "#505470",
+                          border: "1px solid #EFF0F4",
+                          borderRadius: "3px",
+                          width: 26,
+                          height: 27,
+                          fontSize: 12,
+                          fontWeight: 500,
+                          fontFamily: "'Inter', Helvetica",
+                        }}
+                      />
+                    )}
+                  />
+                </Box>
               </Box>
             </Box>
+
+            {/* Preferences Section */}
+            <Box sx={{ width: 200, ml: 1 }}>
+              <PreferencesSection />
+            </Box>
           </Box>
-        </Box>
+    
+      {/* Action Buttons */}
+      <Fab
+        color="primary"
+        sx={{
+          position: "fixed",
+          bottom: 120,
+          right: 30,
+          width: 51,
+          height: 48,
+          borderRadius: "25.5px/24px",
+        }}
+      >
+        <AddIcon />
+      </Fab>
 
-        {/* Action Buttons */}
-        <Fab
-          color="primary"
-          sx={{
-            position: "fixed",
-            bottom: 120,
-            right: 30,
-            width: 51,
-            height: 48,
-            borderRadius: "25.5px/24px",
-          }}
-        >
-          <AddIcon />
-        </Fab>
-
-        <Fab
-          color="error"
-          sx={{
-            position: "fixed",
-            bottom: 50,
-            right: 30,
-            width: 51,
-            height: 48,
-            borderRadius: "25.5px/24px",
-          }}
-        >
-          <AddIcon />
-        </Fab>
-      </Box>
+      <Fab
+        color="error"
+        sx={{
+          position: "fixed",
+          bottom: 50,
+          right: 30,
+          width: 51,
+          height: 48,
+          borderRadius: "25.5px/24px",
+        }}
+      >
+        <AddIcon />
+      </Fab>
     </Box>
   );
 };
